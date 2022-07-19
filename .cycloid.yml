@@ -1,7 +1,7 @@
 version: "2"
 name: Azure Virtual Desktop
 canonical: stack-azure-virtual-desktop
-status: private
+status: public
 author: Cycloid
 description: |
   Deploy an ARM Azure Virtual Desktop environment (non AVD Classic)
