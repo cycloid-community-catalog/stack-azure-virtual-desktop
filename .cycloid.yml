@@ -1,33 +1,34 @@
-version: "2"
-name: Azure Virtual Desktop
-canonical: stack-azure-virtual-desktop
-status: public
-author: Cycloid
+---
+version: '2'
+name: 'Azure Virtual Desktop'
+canonical: 'stack-azure-virtual-desktop'
+status: 'public'
+author: 'Cycloid'
 description: |
   Deploy an ARM Azure Virtual Desktop environment (non AVD Classic)
 image: |
   https://cycloid-demo-stacks-logo.s3.eu-west-1.amazonaws.com/AzureVirtualDesktop.png
 keywords:
-  - Azure
-  - Windows
-  - Virtual Desktop
+  - 'Azure'
+  - 'Windows'
+  - 'Virtual Desktop'
 technologies:
-  - technology: Azure Virtual Desktop
-    version: "n/a"
+  - technology: 'Azure Virtual Desktop'
+    version: 'n/a'
 
 config:
   default:
     name: 'Azure Virtual Desktop'
-    description: 'DeDeploy an ARM Azure Virtual Desktop environment (non AVD Classic)'
+    description: 'Deploy an ARM Azure Virtual Desktop environment (non AVD Classic)'
     cloud_provider: azurerm
     # Pipeline and variable configuration for the default CD pipeline use case
     pipeline:
       pipeline:
-        path: pipeline/pipeline.yaml
+        path: 'pipeline/pipeline.yaml'
       variables:
-        path: pipeline/variables.sample.yaml
-        destination: ($ project $)/pipeline/($ environment $)/variables.yaml
-    # Configuration of terraform (leave .sample extension to prevent terraform executing the sample file)
+        path: 'pipeline/variables.sample.yaml'
+        destination: '($ project $)/pipeline/($ environment $)/variables.yaml'
+    # Configuration of terraform
     terraform:
       main:
         path: 'terraform/main.tf'
